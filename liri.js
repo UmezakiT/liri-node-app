@@ -3,7 +3,7 @@ require("dotenv").config();
 const fs = require("fs");
 const axios = require("axios");
 const moment = require("moment");
-let keys = require("./keys.js");
+let keys = require("./key.js");
 let spotifyNode = require("node-spotify-api");
 let spotify = new spotifyNode(keys.spotify);
 var arg = process.argv[2];
