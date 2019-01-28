@@ -36,10 +36,15 @@ function movieSearch() {
 }
 
 function bandSearch(){
-  axios.get("https://rest.bandsintown.com/artists/" + userCommand2 + "/events?app_id=codingbootcamp")
+
+
+  axios.get("https://rest.bandsintown.com/artists/" + arg2 + "/events?app_id=codingbootcamp")
     .then(function (response) {
-      console.log(`Date: ${moment(date).format("MM/DD/YYYY")} || Venue: ${response.data[0].venue.name} || Country: ${response.data[0].venue.country} || City: ${response.data[0].venue.city}`);
+      console.log(`Date: ${moment(response.data[0].datetime).format("MM/DD/YYYY")} || Venue: ${response.data[0].venue.name} || Country: ${response.data[0].venue.country} || City: ${response.data[0].venue.city}`);
     })
+    .catch(function(err){
+      console.log(err);
+    });
 }
 
 function search(){
